@@ -31,7 +31,7 @@ for row in sales_li:
     if row["担当営業"] != "佐藤":
         continue
     row_count += 1
-    for j, cell in enumerate(row.values()):
-        sheet.cell(row=row_count, column=j+1).value = cell
+    # 最終行に1行追加
+    sheet.append(list(row.values()))
 
 book.save("uriage_sato.xlsx")
