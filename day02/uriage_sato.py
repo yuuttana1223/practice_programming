@@ -26,11 +26,9 @@ sheet["A1"].value = "佐藤の売上一覧"
 for i, cell in enumerate(column_names):
     sheet.cell(row=2, column=i+1).value = cell
 
-row_count = 2
 for row in sales_li:
     if row["担当営業"] != "佐藤":
         continue
-    row_count += 1
     # 最終行に1行追加
     sheet.append(list(row.values()))
 
